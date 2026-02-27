@@ -1,0 +1,25 @@
+:root {
+    --background-clr: #000028; /* ТЕМНАЯ тема как основная */
+    --background-img: image-set(
+        url("../images/cover-image-dark.avif") type("image/avif") 1x,
+        url("../images/cover-image-dark@2.avif") type("image/avif") 2x,
+        url("../images/cover-image-dark.webp") type("image/webp") 1x,
+        url("../images/cover-image-dark@2.webp") type("image/webp") 2x,
+        url("../images/cover-image-dark.png") type("image/png") 1x,
+        url("../images/cover-image-dark@2.png") type("image/png") 2x
+    ); /* ТЕМНОЕ изображение на фоне */
+    --main-font: "IBM Plex Mono";
+    --main-text-clr: #F1B2CE; /* ТЕМНАЯ тема: цвет текста */
+    --header-decoration-icon-clr: #FF0070; /* ТЕМНАЯ тема: REC виден */
+    --decorative-angle-clr: #FF0070; /* ТЕМНАЯ тема: цвет уголков */
+    --accent-heading-fs-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    --accent-heading-fs-desktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --button-clr: #FF0070; /* ТЕМНАЯ тема: цвет кнопок */
+    --button-hover-clr: #ff007066; /* ТЕМНАЯ тема: hover */
+    --main-title-clr: #DB00FF; /* ТЕМНАЯ тема: цвет заголовка no focus */
+    --accent-boxshadow-clr: #FF0070; /* ТЕМНАЯ тема: цвет тени */
+    --accent-background-clr: #FF0070; /* ТЕМНАЯ тема: акцентный фон */
+    --accent-header-description-clr: #000028; /* ТЕМНАЯ тема: цвет текста на акцентном фоне */
+    --accent-section-title-clr: #FF0070; /* ТЕМНАЯ тема: цвет заголовков секций */
+    --accent-gallery-title-clr: #000028; /* ТЕМНАЯ тема: цвет заголовка галереи */
+}
