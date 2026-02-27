@@ -4,8 +4,7 @@
     line-height: 23.4px;
     inline-size: 100%;
     color: var(--main-text-clr);
-    background: var(--background-img);
-    background-color: var(--background-clr);
+    background: var(--background-img) var(--background-clr, #fff1f7);    
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -88,8 +87,8 @@
 }
 
 .accent-link {
-  text-shadow: 2px 2px 0 var(--accent-boxshadow-clr, #FF8DCB);
-  text-decoration: none;
+    text-shadow: 2px 2px 0 var(--accent-boxshadow-clr, #FF8DCB);
+    text-decoration: none;
 }
 
 /* HEADER */
@@ -99,6 +98,7 @@
     display: grid;
     padding: 10px;
     block-size: 100vh;
+    min-block-size: 668px;
     inline-size: 100%;
     grid-template-rows: auto max-content auto;
 }
@@ -150,13 +150,14 @@
     display: flex;
     flex-direction: column;
     justify-self: flex-end;
-    gap: 20px;
+    gap: 10px;
 }
 
 @media (min-width: 1024px) {
     .header__theme-menu-list {
         flex-direction: row;
         justify-self: center;
+        gap: 20px;
     }
 }
 
@@ -214,7 +215,9 @@
     }
 }
 
-/* MAIN */
+/* ======================================== */
+/* MAIN - ОБЩИЕ СТИЛИ ДЛЯ СЕКЦИЙ */
+/* ======================================== */
 
 .content {
     display: flex;
@@ -230,23 +233,35 @@
     }
 }
 
+/* Базовый класс для всех секций */
 .section {
     display: flex;
+    flex-direction: column;
     gap: 20px;
+    width: 100%;
 }
 
+/* Заголовки секций */
+.section__title {
+    color: var(--accent-section-title-clr, #353430);
+    font-weight: bold;
+}
+
+/* Списки в секциях */
 .section__list {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* Элементы списков */
 .section__item {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+/* Ссылки в секциях */
 .section-link:hover {
     border-block-end: 1px solid currentColor;
 }
@@ -259,63 +274,54 @@
     outline: 1px solid currentColor;
 }
 
-.section__why {
-    flex-direction: column;
+/* ======================================== */
+/* СПЕЦИФИЧНЫЕ СТИЛИ ДЛЯ СЕКЦИЙ */
+/* ======================================== */
+
+/* Секции с сеткой 2 колонки (Почему? и Как?) */
+.section--grid-2col {
+    /* На мобилках оставляем колонку */
 }
 
 @media (min-width: 768px) {
-    .section__why {
+    .section--grid-2col {
         display: grid;
         grid-template-columns: 1.54fr 3.08fr;
     }
 }
 
 @media (min-width: 1024px) {
-    .section__why {
-        display: grid;
+    .section--grid-2col {
         grid-template-columns: 1.577fr 3.25fr;
     }
 }
 
-.section__what {
-    flex-direction: column;
-}
-
-@media (min-width: 1024px) {
-    .section__what-list {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
+/* Секция "Что?" - особое поведение заголовка */
 @media (min-width: 768px) {
-    .section__what-title {
+    .section--what .section__title {
         inline-size: 32%;
     }
 }
 
-.section__how {
-    flex-direction: column;
-}
-
-@media (min-width: 768px) {
-    .section__how {
-        display: grid;
-        grid-template-columns: 1.54fr 3.08fr;
-    }
-}
-
+/* Список в секции "Что?" на десктопе */
 @media (min-width: 1024px) {
-    .section__how {
-        grid-template-columns: 1.577fr 3.25fr;
+    .section--what .section__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 }
 
+/* Контейнер для секции "Как?" */
 .section__how-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
+
+/* ======================================== */
+/* ГАЛЕРЕЯ */
+/* ======================================== */
 
 .section__gallery {
     display: flex;
@@ -368,7 +374,9 @@
     }
 }
 
+/* ======================================== */
 /* FOOTER */
+/* ======================================== */
 
 .footer {
     position: relative;
@@ -377,6 +385,7 @@
     justify-content: center;
     padding: 10px;
     block-size: 100vh;
+    min-block-size: 668px;
     inline-size: 100%;
 }
 
