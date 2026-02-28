@@ -1,5 +1,5 @@
 :root.theme-light {
-    --background-clr: #FFC2E6; /* Базовый цвет фона сайта */
+    --background-clr: #FFF1F7; /* Базовый цвет фона сайта */
     --background-img: image-set(
         url("../images/cover-image-light.avif") type("image/avif") 1x,
         url("../images/cover-image-light@2.avif") type("image/avif") 2x,
@@ -23,7 +23,7 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --background-clr: #FFC2E6; /* Базовый цвет фона сайта */
+        --background-clr: #FFF1F7; /* Базовый цвет фона сайта */
         --background-img: image-set(
             url("../images/cover-image-light.avif") type("image/avif") 1x,
             url("../images/cover-image-light@2.avif") type("image/avif") 2x,

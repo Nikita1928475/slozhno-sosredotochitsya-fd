@@ -261,6 +261,24 @@
     gap: 10px;
 }
 
+/* Заголовки внутри элементов */
+.section__item-title {
+    color: var(--accent-header-description-clr, #353430);
+    background-color: var(--accent-background-clr, #FF8DCB);
+    font-weight: bold;
+}
+
+.section__item-subtitle {
+    color: var(--accent-header-description-clr, #353430);
+    background-color: var(--accent-background-clr, #FF8DCB);
+    font-weight: normal;
+}
+
+/* Описания */
+.section__item-description {
+    color: var(--main-text-clr);
+}
+
 /* Ссылки в секциях */
 .section-link:hover {
     border-block-end: 1px solid currentColor;
@@ -278,59 +296,75 @@
 /* СПЕЦИФИЧНЫЕ СТИЛИ ДЛЯ СЕКЦИЙ */
 /* ======================================== */
 
-/* Секции с сеткой 2 колонки (Почему? и Как?) */
-.section--grid-2col {
-    /* На мобилках оставляем колонку */
-}
-
+/* Секция "Почему?" - двухколоночная сетка */
 @media (min-width: 768px) {
-    .section--grid-2col {
+    .section--reasons {
         display: grid;
         grid-template-columns: 1.54fr 3.08fr;
     }
 }
 
 @media (min-width: 1024px) {
-    .section--grid-2col {
+    .section--reasons {
         grid-template-columns: 1.577fr 3.25fr;
     }
 }
 
-/* Секция "Что?" - особое поведение заголовка */
+/* Секция "Факторы" - особое поведение заголовка */
 @media (min-width: 768px) {
-    .section--what .section__title {
+    .section--factors .section__title {
         inline-size: 32%;
     }
 }
 
-/* Список в секции "Что?" на десктопе */
+/* Список в секции "Факторы" на десктопе */
 @media (min-width: 1024px) {
-    .section--what .section__list {
+    .section--factors .section__list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
     }
 }
 
-/* Контейнер для секции "Как?" */
-.section__how-container {
+/* Секция "Советы" - двухколоночная сетка */
+@media (min-width: 768px) {
+    .section--tips {
+        display: grid;
+        grid-template-columns: 1.54fr 3.08fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section--tips {
+        grid-template-columns: 1.577fr 3.25fr;
+    }
+}
+
+/* Контейнер для секции "Советы" */
+.section__tips-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.section__tips-title {
+    color: var(--accent-header-description-clr, #353430);
+    background-color: var(--accent-background-clr, #FF8DCB);
+    font-weight: bold;
 }
 
 /* ======================================== */
 /* ГАЛЕРЕЯ */
 /* ======================================== */
 
-.section__gallery {
+.section--gallery {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 @media (min-width: 768px) {
-    .section__gallery {
+    .section--gallery {
         gap: 20px;
     }
 }
@@ -348,7 +382,7 @@
     }
 }
 
-.section__gallery-img {
+.gallery__img {
     display: block;
     block-size: 100%;
     inline-size: 100%;
@@ -357,19 +391,19 @@
 }
 
 @media (min-width: 768px) {
-    .section__gallery-img_sunset {
+    .gallery__image--sunset {
         grid-column: span 2;
     }
 
-    .section__gallery-img_ice-cream {
+    .gallery__image--ice-cream {
         grid-row: span 2;
     }
 
-    .section__gallery-img_tape {
+    .gallery__image--tape {
         grid-row: span 2;
     }
 
-    .section__gallery-img_street {
+    .gallery__image--street {
         grid-column: span 2;
     }
 }
